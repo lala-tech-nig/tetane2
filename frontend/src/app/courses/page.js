@@ -16,7 +16,7 @@ export default function Courses() {
 
     const fetchCourses = async () => {
         try {
-            const res = await fetch('http://localhost:5000/api/courses');
+            const res = await fetch('https://tetane2.onrender.com/api/courses');
             const data = await res.json();
             setCourses(data);
             setLoading(false);

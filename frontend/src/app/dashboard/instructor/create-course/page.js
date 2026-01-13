@@ -24,7 +24,7 @@ export default function CreateCourse() {
         e.preventDefault();
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('http://localhost:5000/api/courses', {
+            const res = await fetch('https://tetane2.onrender.com/api/courses', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
