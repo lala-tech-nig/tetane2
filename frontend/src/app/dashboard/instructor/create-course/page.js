@@ -43,31 +43,31 @@ export default function CreateCourse() {
     };
 
     return (
-        <div className="container" style={{ maxWidth: '800px', padding: '40px 20px' }}>
-            <h1>Create New Course</h1>
-            <form onSubmit={handleSubmit} style={{ marginTop: '30px' }}>
-                <div style={{ marginBottom: '20px' }}>
-                    <label style={{ display: 'block', marginBottom: '10px' }}>Course Title</label>
+        <div className={styles.formContainer}>
+            <h1 className={styles.title}>Create New Course</h1>
+            <form onSubmit={handleSubmit} className={styles.form}>
+                <div className={styles.formGroup}>
+                    <label className={styles.label}>Course Title</label>
                     <input type="text" name="title" value={formData.title} onChange={handleChange} required
-                        style={{ width: '100%', padding: '10px', fontSize: '1rem' }} />
+                        className={styles.input} />
                 </div>
 
-                <div style={{ marginBottom: '20px' }}>
-                    <label style={{ display: 'block', marginBottom: '10px' }}>Description</label>
+                <div className={styles.formGroup}>
+                    <label className={styles.label}>Description</label>
                     <textarea name="description" value={formData.description} onChange={handleChange} required
-                        rows="5" style={{ width: '100%', padding: '10px', fontSize: '1rem' }}></textarea>
+                        rows="5" className={styles.textarea}></textarea>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
-                    <div>
-                        <label style={{ display: 'block', marginBottom: '10px' }}>Price ($)</label>
+                <div className={styles.grid}>
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>Price ($)</label>
                         <input type="number" name="price" value={formData.price} onChange={handleChange} required
-                            style={{ width: '100%', padding: '10px', fontSize: '1rem' }} />
+                            className={styles.input} />
                     </div>
-                    <div>
-                        <label style={{ display: 'block', marginBottom: '10px' }}>Category</label>
+                    <div className={styles.formGroup}>
+                        <label className={styles.label}>Category</label>
                         <select name="category" value={formData.category} onChange={handleChange}
-                            style={{ width: '100%', padding: '10px', fontSize: '1rem' }}>
+                            className={styles.select}>
                             <option>Development</option>
                             <option>Design</option>
                             <option>Marketing</option>
