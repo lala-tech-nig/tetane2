@@ -1,0 +1,57 @@
+.header {
+    margin: 40px 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.title {
+    font-size: 2rem;
+    color: var(--text-main);
+}
+
+.searchBar input {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    width: 300px;
+    outline: none;
+}
+
+.searchBar input:focus {
+    border-color: var(--primary);
+}
+
+.filterContainer {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+
+.filterBtn {
+    background: var(--light);
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: all 0.2s;
+}
+
+.filterBtn:hover,
+.filterBtn.active {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
