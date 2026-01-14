@@ -1,90 +1,133 @@
+.home {
+  background-color: var(--bg-body);
+}
+
 .hero {
-  background: linear-gradient(135deg, #FFB88E 0%, #EA5753 100%);
-  /* Fallback gradient similar to the image provided */
-  background: linear-gradient(to right, #6b7280, #3b82f6);
   padding: 100px 0;
-  color: var(--white);
   text-align: center;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .heroTitle {
   font-size: 3rem;
   font-weight: 800;
-  margin-bottom: 20px;
   line-height: 1.2;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+}
+
+.heroHighlight {
+  color: var(--primary);
 }
 
 .heroSubtitle {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
   max-width: 600px;
-  margin: 0 auto 30px;
-  opacity: 0.9;
+  margin: 0 auto 40px;
 }
 
-.section {
-  padding: 60px 20px;
+.heroButtons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 
+/* Stats */
+.statsSection {
+  background-color: var(--bg-white);
+  padding: 40px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.statsGrid {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.statItem h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.statItem p {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Sections shared */
 .sectionHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 .sectionTitle {
-  font-size: 2rem;
+  font-size: 1.75rem;
   font-weight: 700;
-  color: var(--text-main);
+  color: var(--text-primary);
 }
 
-.viewAll {
+.centerTitle {
+  text-align: center;
+}
+
+.sectionLink {
   color: var(--primary);
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .courseGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 30px;
 }
 
-.howItWorks {
-  background-color: #f9fafb;
-  padding: 80px 0;
+/* Features */
+.featuresSection {
+  background-color: var(--bg-white);
 }
 
-.steps {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 50px;
-  gap: 30px;
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
 }
 
-.step {
+.featureCard {
   text-align: center;
-  max-width: 300px;
+  padding: 30px;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background-color: var(--bg-body);
 }
 
-.stepIcon {
-  width: 60px;
-  height: 60px;
-  background-color: var(--primary-light, #e0e7ff);
-  color: var(--primary);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin: 0 auto 20px;
+.featureIcon {
+  font-size: 3rem;
+  margin-bottom: 20px;
 }
 
-.step h3 {
+.featureCard h3 {
   margin-bottom: 10px;
+  font-size: 1.25rem;
 }
 
-.step p {
-  color: var(--text-muted);
+.featureCard p {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+
+  .statsGrid {
+    flex-direction: column;
+    gap: 30px;
+  }
 }

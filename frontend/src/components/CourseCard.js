@@ -5,18 +5,20 @@ const CourseCard = ({ course }) => {
     return (
         <div className={styles.card}>
             <div className={styles.imagePlaceholder}>
-                {/* Image would go here */}
-                <span>{course.category}</span>
+                <span>Course Image</span>
             </div>
             <div className={styles.content}>
-                <h3 className={styles.title}>{course.title}</h3>
-                <p className={styles.instructor}>{course.instructor}</p>
-                <div className={styles.rating}>
-                    {'★'.repeat(Math.round(course.rating))} <span>({course.reviews} reviews)</span>
+                <div className={styles.header}>
+                    <span className={styles.category}>{course.category || 'General'}</span>
+                    <span className={styles.rating}>⭐ 4.8</span>
                 </div>
+                <h3 className={styles.title}>
+                    <Link href={`/course/${course._id}`}>{course.title}</Link>
+                </h3>
+                <p className={styles.instructor}>By {course.instructorId?.name || 'Instructor'}</p>
                 <div className={styles.footer}>
                     <span className={styles.price}>${course.price}</span>
-                    <Link href={`/course/${course.id}`} className={styles.button}>View</Link>
+                    <Link href={`/course/${course._id}`} className={styles.viewBtn}>View Details</Link>
                 </div>
             </div>
         </div>

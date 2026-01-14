@@ -1,65 +1,121 @@
+"use client";
+
 import Link from 'next/link';
-import styles from './page.module.css';
 import CourseCard from '@/components/CourseCard';
+import styles from './page.module.css';
+
+// Using server component for simplicity in data fetching if needed, 
+// for now hardcoding dummy popular courses or fetching from client in a real scenario
+// We'll keep it static for the landing page for speed.
 
 export default function Home() {
-  const dummyCourses = [
-    { id: 1, title: 'UI/UX Design Essentials', instructor: 'Jane Doe', rating: 4.8, reviews: 1245, price: 49.99, category: 'Design' },
-    { id: 2, title: 'Full-Stack Web Development', instructor: 'John Smith', rating: 4.9, reviews: 850, price: 89.99, category: 'Development' },
-    { id: 3, title: 'Digital Marketing Mastery', instructor: 'Sarah Wilson', rating: 4.7, reviews: 2300, price: 39.99, category: 'Marketing' },
-    { id: 4, title: 'Data Science Fundamentals', instructor: 'Alex Brown', rating: 4.6, reviews: 500, price: 59.99, category: 'Data Science' },
-  ];
-
   return (
     <div className={styles.home}>
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className="container">
-          <h1 className={styles.heroTitle}>Learn. Create. Succeed with Tetane Learn</h1>
-          <p className={styles.heroSubtitle}>Master high-demand skills with professional online courses designed for your career success in the digital age.</p>
-          <div className={styles.heroButtons}>
-            <Link href="/courses" className="btn btn-primary">Explore Courses</Link>
-            <Link href="/about" className="btn btn-outline" style={{ marginLeft: '10px', color: 'white', borderColor: 'white' }}>Learn More</Link>
+          <div className={styles.heroContent}>
+            <h1 className={styles.heroTitle}>Master New Skills with <br /><span className={styles.heroHighlight}>Tetane Learn</span></h1>
+            <p className={styles.heroSubtitle}>
+              Join thousands of learners worldwide. Access high-quality courses in coding, design, business, and more.
+            </p>
+            <div className={styles.heroButtons}>
+              <Link href="/courses" className="btn btn-primary">Start Learning</Link>
+              <Link href="/auth/register" className="btn btn-outline">Join for Free</Link>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Popular Courses */}
-      <section className={`container ${styles.section}`}>
-        <div className={styles.sectionHeader}>
-          <h2 className={styles.sectionTitle}>Popular Courses</h2>
-          <Link href="/courses" className={styles.viewAll}>View All</Link>
-        </div>
-        <div className={styles.courseGrid}>
-          {dummyCourses.map(course => (
-            <CourseCard key={course.id} course={course} />
-          ))}
+      {/* Stats Section */}
+      <section className={styles.statsSection}>
+        <div className={`container ${styles.statsGrid}`}>
+          <div className={styles.statItem}>
+            <h3>10k+</h3>
+            <p>Students</p>
+          </div>
+          <div className={styles.statItem}>
+            <h3>500+</h3>
+            <p>Courses</p>
+          </div>
+          <div className={styles.statItem}>
+            <h3>100+</h3>
+            <p>Instructors</p>
+          </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className={styles.howItWorks}>
+      {/* Popular Courses Section */}
+      <section className="section">
         <div className="container">
-          <h2 className={styles.sectionTitle} style={{ textAlign: 'center' }}>How It Works</h2>
-          <div className={styles.steps}>
-            <div className={styles.step}>
-              <div className={styles.stepIcon}>1</div>
-              <h3>Choose Your Course</h3>
-              <p>Browse our wide selection of industry-leading courses.</p>
+          <div className={styles.sectionHeader}>
+            <h2 className={styles.sectionTitle}>Popular Courses</h2>
+            <Link href="/courses" className={styles.sectionLink}>View all courses &rarr;</Link>
+          </div>
+
+          <div className={styles.courseGrid}>
+            {/* Mock Courses - in real app, fetch these */}
+            <MockCourseCard
+              title="Complete Web Development Bootcamp"
+              instructor="Sarah Doe"
+              price="89.99"
+              category="Development"
+            />
+            <MockCourseCard
+              title="UI/UX Design Masterclass"
+              instructor="John Smith"
+              price="69.99"
+              category="Design"
+            />
+            <MockCourseCard
+              title="Digital Marketing Strategy"
+              instructor="Emily White"
+              price="49.99"
+              category="Marketing"
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className={`${styles.featuresSection} section`}>
+        <div className="container">
+          <h2 className={`${styles.sectionTitle} ${styles.centerTitle}`}>Why Choose Tetane Learn?</h2>
+          <div className={styles.featuresGrid}>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>🚀</div>
+              <h3>Learn at your pace</h3>
+              <p>Enjoy lifetime access to courses on the website and app.</p>
             </div>
-            <div className={styles.step}>
-              <div className={styles.stepIcon}>2</div>
-              <h3>Learn at Your Own Pace</h3>
-              <p>Access high-quality video lessons anytime, anywhere.</p>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>👨‍🏫</div>
+              <h3>Expert Instructors</h3>
+              <p>Learn from industry experts passionate about teaching.</p>
             </div>
-            <div className={styles.step}>
-              <div className={styles.stepIcon}>3</div>
+            <div className={styles.featureCard}>
+              <div className={styles.featureIcon}>📜</div>
               <h3>Get Certified</h3>
-              <p>Complete assessments to earn your certificate test.</p>
+              <p>Earn a certificate of completion for every course.</p>
             </div>
           </div>
         </div>
       </section>
     </div>
   );
+}
+
+function MockCourseCard({ title, instructor, price, category }) {
+  return (
+    <div className="card" style={{ padding: '0', overflow: 'hidden' }}>
+      <div style={{ height: '160px', backgroundColor: '#e2e8f0', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b' }}>
+        Course Image
+      </div>
+      <div style={{ padding: '20px' }}>
+        <span style={{ fontSize: '0.8rem', color: '#2563eb', fontWeight: 'bold' }}>{category}</span>
+        <h3 style={{ fontSize: '1.1rem', margin: '8px 0', lineHeight: '1.4' }}>{title}</h3>
+        <p style={{ fontSize: '0.9rem', color: '#64748b' }}>{instructor}</p>
+        <div style={{ marginTop: '16px', fontWeight: 'bold' }}>${price}</div>
+      </div>
+    </div>
+  )
 }

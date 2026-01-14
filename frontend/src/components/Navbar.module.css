@@ -1,81 +1,109 @@
 .navbar {
-    background-color: var(--white);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: var(--header-height);
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
 }
 
 .navContainer {
+    height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 70px;
+    justify-content: space-between;
 }
 
 .logo {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-weight: 700;
-    color: var(--dark);
-}
-
-.logoHighlight {
     color: var(--primary);
+    letter-spacing: -0.5px;
 }
 
-.navMenu {
+.desktopMenu {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 24px;
 }
 
-.navItem a {
+.navLink {
+    font-size: 0.95rem;
     font-weight: 500;
-    color: var(--text-main);
-    transition: color 0.3s;
+    color: var(--text-secondary);
 }
 
-.navItem a:hover {
+.navLink:hover {
     color: var(--primary);
+}
+
+.userSection {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-left: 16px;
+    border-left: 1px solid var(--border-light);
+}
+
+.userName {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.authButtons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .mobileToggle {
     display: none;
+    flex-direction: column;
+    gap: 4px;
+    background: none;
+    border: none;
     cursor: pointer;
 }
 
 .bar {
-    display: block;
-    width: 25px;
-    height: 3px;
-    margin: 5px auto;
-    background-color: var(--dark);
-    transition: all 0.3s ease;
+    width: 24px;
+    height: 2px;
+    background-color: var(--text-primary);
+    border-radius: 2px;
+}
+
+/* Mobile Menu */
+.mobileMenu {
+    position: absolute;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
+    padding: 16px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.mobileLink {
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.mobileLink:hover {
+    background-color: var(--bg-body);
+    color: var(--primary);
 }
 
 @media (max-width: 768px) {
+    .desktopMenu {
+        display: none;
+    }
+
     .mobileToggle {
-        display: block;
-    }
-
-    .navMenu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background-color: var(--white);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-        padding: 20px 0;
-    }
-
-    .navMenu.active {
-        left: 0;
-    }
-
-    .navItem {
-        margin: 15px 0;
+        display: flex;
     }
 }

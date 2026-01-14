@@ -1,0 +1,97 @@
+/* [project]/src/app/auth/login/page.module.css [app-client] (css) */
+.page-module__xtSyCa__authContainer {
+  background-color: var(--bg-body);
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+}
+
+.page-module__xtSyCa__authCard {
+  background: var(--bg-white);
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 440px;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  padding: 40px;
+}
+
+.page-module__xtSyCa__header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.page-module__xtSyCa__logo {
+  color: var(--primary);
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.page-module__xtSyCa__title {
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.page-module__xtSyCa__subtitle {
+  color: var(--text-secondary);
+  font-size: .95rem;
+}
+
+.page-module__xtSyCa__errorAlert {
+  color: var(--danger);
+  border-radius: var(--radius);
+  background-color: #fef2f2;
+  border: 1px solid #fecaca;
+  margin-bottom: 20px;
+  padding: 12px;
+  font-size: .9rem;
+}
+
+.page-module__xtSyCa__footer {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-top: 24px;
+  font-size: .95rem;
+}
+
+.page-module__xtSyCa__link {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.page-module__xtSyCa__link:hover {
+  text-decoration: underline;
+}
+
+.page-module__xtSyCa__roleSelector {
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+  display: grid;
+}
+
+.page-module__xtSyCa__roleOption {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  text-align: center;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: 12px;
+  font-weight: 500;
+  transition: all .2s;
+}
+
+.page-module__xtSyCa__roleOption.page-module__xtSyCa__active {
+  border-color: var(--primary);
+  color: var(--primary);
+  background-color: #eff6ff;
+}
+
+/*# sourceMappingURL=src_app_auth_login_page_module_ff564510.css.map*/

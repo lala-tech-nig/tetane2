@@ -25,8 +25,10 @@ export const AuthProvider = ({ children }) => {
     };
 
     const login = async (email, password) => {
+        const url = `https://tetane2.onrender.com/api/auth/login`;
+        console.log('Logging in at:', url);
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/login`, {
+            const res = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -56,8 +58,10 @@ export const AuthProvider = ({ children }) => {
     };
 
     const register = async ({ name, email, password, role }) => {
+        const url = `https://tetane2.onrender.com/api/auth/register`;
+        console.log('Registering at:', url);
         try {
-            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/register`, {
+            const res = await fetch(url, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -99,5 +103,6 @@ export const AuthProvider = ({ children }) => {
         </AuthContext.Provider>
     );
 };
+
 
 export const useAuth = () => useContext(AuthContext);

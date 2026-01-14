@@ -1,0 +1,133 @@
+/* [project]/src/app/page.module.css [app-client] (css) */
+.page-module___8aEwW__home {
+  background-color: var(--bg-body);
+}
+
+.page-module___8aEwW__hero {
+  text-align: center;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 100px 0;
+}
+
+.page-module___8aEwW__heroTitle {
+  color: var(--text-primary);
+  margin-bottom: 24px;
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.page-module___8aEwW__heroHighlight {
+  color: var(--primary);
+}
+
+.page-module___8aEwW__heroSubtitle {
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 1.25rem;
+}
+
+.page-module___8aEwW__heroButtons {
+  justify-content: center;
+  gap: 16px;
+  display: flex;
+}
+
+.page-module___8aEwW__statsSection {
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  padding: 40px 0;
+}
+
+.page-module___8aEwW__statsGrid {
+  text-align: center;
+  justify-content: space-around;
+  display: flex;
+}
+
+.page-module___8aEwW__statItem h3 {
+  color: var(--primary);
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.page-module___8aEwW__statItem p {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.page-module___8aEwW__sectionHeader {
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.page-module___8aEwW__sectionTitle {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  font-weight: 700;
+}
+
+.page-module___8aEwW__centerTitle {
+  text-align: center;
+}
+
+.page-module___8aEwW__sectionLink {
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.page-module___8aEwW__courseGrid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  display: grid;
+}
+
+.page-module___8aEwW__featuresSection {
+  background-color: var(--bg-white);
+}
+
+.page-module___8aEwW__featuresGrid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 40px;
+  display: grid;
+}
+
+.page-module___8aEwW__featureCard {
+  text-align: center;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius);
+  background-color: var(--bg-body);
+  padding: 30px;
+}
+
+.page-module___8aEwW__featureIcon {
+  margin-bottom: 20px;
+  font-size: 3rem;
+}
+
+.page-module___8aEwW__featureCard h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+}
+
+.page-module___8aEwW__featureCard p {
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .page-module___8aEwW__heroTitle {
+    font-size: 2.25rem;
+  }
+
+  .page-module___8aEwW__statsGrid {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+/*# sourceMappingURL=src_app_page_module_css_bad6b30c._.single.css.map*/

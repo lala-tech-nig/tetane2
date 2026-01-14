@@ -1,59 +1,95 @@
-.container {
+.authContainer {
+    min-height: 100vh;
     display: flex;
-    justify-content: center;
     align-items: center;
-    min-height: 80vh;
-    background-color: var(--light);
+    justify-content: center;
+    padding: 20px;
+    background-color: var(--bg-body);
 }
 
-.card {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+.authCard {
+    background: var(--bg-white);
     width: 100%;
-    max-width: 400px;
+    max-width: 440px;
+    padding: 40px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo {
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 24px;
+    text-decoration: none;
 }
 
 .title {
-    text-align: center;
-    margin-bottom: 10px;
-    color: var(--text-main);
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 8px;
 }
 
 .subtitle {
-    text-align: center;
-    color: var(--text-muted);
-    margin-bottom: 30px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
 }
 
-.formGroup {
+.errorAlert {
+    background-color: #fef2f2;
+    color: var(--danger);
+    padding: 12px;
+    border-radius: var(--radius);
     margin-bottom: 20px;
-}
-
-.formGroup label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
     font-size: 0.9rem;
+    border: 1px solid #fecaca;
 }
 
-.formGroup input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-}
-
-.footerText {
+.footer {
+    margin-top: 24px;
     text-align: center;
-    margin-top: 20px;
-    font-size: 0.9rem;
-    color: var(--text-muted);
+    font-size: 0.95rem;
+    color: var(--text-secondary);
 }
 
-.footerText a {
+.link {
     color: var(--primary);
     font-weight: 500;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+/* Specific for Register Page */
+.roleSelector {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.roleOption {
+    padding: 12px;
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+
+.roleOption.active {
+    border-color: var(--primary);
+    background-color: #eff6ff;
+    color: var(--primary);
 }

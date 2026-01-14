@@ -3,7 +3,6 @@ import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import CourseCard from '@/components/CourseCard';
 
 export default function StudentDashboard() {
     const { user, loading } = useAuth();
@@ -21,49 +20,50 @@ export default function StudentDashboard() {
     const fetchEnrolledCourses = async () => {
         try {
             const token = localStorage.getItem('token');
-            const res = await fetch('https://tetane2.onrender.com/api/courses/my/enrolled', {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/courses/my/enrolled`, {
                 headers: { 'x-auth-token': token }
             });
             const data = await res.json();
-            setEnrolledCourses(data);
+            setEnrolledCourses(Array.isArray(data) ? data : []);
         } catch (err) {
             console.error('Error fetching enrolled courses:', err);
         }
     };
 
-    if (loading || !user) return <div className="container"><p>Loading...</p></div>;
+    if (loading || !user) return <div className="container section"><p>Loading...</p></div>;
 
     return (
-        <div className="container" style={{ padding: '40px 20px' }}>
-            <div style={{ marginBottom: '30px' }}>
-                <h1>My Learning</h1>
-                <p>Welcome back, {user.name}!</p>
+        <div className="container section">
+            <div style={{ paddingBottom: '30px', borderBottom: '1px solid var(--border-light)', marginBottom: '30px' }}>
+                <h1 style={{ fontSize: '2rem', marginBottom: '8px' }}>My Learning</h1>
+                <p style={{ color: 'var(--text-secondary)' }}>Welcome back, {user.name}!</p>
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '30px' }}>
                 {enrolledCourses.length > 0 ? (
                     enrolledCourses.map(course => (
-                        <div key={course._id} style={{ border: '1px solid #ddd', borderRadius: '8px', overflow: 'hidden' }}>
-                            <div style={{ padding: '20px' }}>
-                                <h3 style={{ marginBottom: '10px' }}>{course.title}</h3>
-                                <p style={{ color: '#666', fontSize: '0.9rem', marginBottom: '15px' }}>Instructor: {course.instructorId?.name}</p>
-                                <Link href={`/course/${course._id}`} className="btn btn-outline" style={{ display: 'block', textAlign: 'center' }}>Continue Learning</Link>
+                        <div key={course._id} className="card" style={{ padding: '0', overflow: 'hidden' }}>
+                            <div style={{ padding: '24px' }}>
+                                <span style={{ color: 'var(--primary)', fontSize: '0.85rem', fontWeight: '600' }}>{course.category}</span>
+                                <h3 style={{ margin: '8px 0', fontSize: '1.2rem' }}>{course.title}</h3>
+                                <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', marginBottom: '20px' }}>Instructor: {course.instructorId?.name}</p>
+                                <Link href={`/course/${course._id}`} className="btn btn-outline btn-full">Continue Learning</Link>
                             </div>
                         </div>
                     ))
                 ) : (
                     <div style={{
-                        border: '2px dashed #ccc',
-                        borderRadius: '10px',
+                        gridColumn: '1 / -1',
+                        border: '2px dashed var(--border-light)',
+                        borderRadius: 'var(--radius)',
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        minHeight: '200px',
-                        textAlign: 'center',
-                        padding: '20px'
+                        padding: '60px',
+                        textAlign: 'center'
                     }}>
-                        <p style={{ marginBottom: '15px', color: '#666' }}>You haven't enrolled in any courses yet.</p>
+                        <p style={{ marginBottom: '20px', color: 'var(--text-secondary)' }}>You haven't enrolled in any courses yet.</p>
                         <Link href="/courses" className="btn btn-primary">Browse Courses</Link>
                     </div>
                 )}

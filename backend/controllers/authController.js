@@ -33,14 +33,15 @@ exports.register = async (req, res) => {
             }
         };
 
-        jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '7d' }, (err, token) => {
+        const secret = process.env.JWT_SECRET || 'default_jwt_secret';
+        jwt.sign(payload, secret, { expiresIn: '7d' }, (err, token) => {
             if (err) throw err;
             res.json({ token, user: { id: user.id, name: user.name, email: user.email, role: user.role } });
         });
 
     } catch (err) {
-        console.error(err.message);
-        res.status(500).send('Server error');
+        console.error('Auth Register Error:', err);
+        res.status(500).json({ error: err.message });
     }
 };
 
@@ -68,7 +69,8 @@ exports.login = async (req, res) => {
             }
         };
 
-        jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '7d' }, (err, token) => {
+        const secret = process.env.JWT_SECRET || 'default_jwt_secret';
+        jwt.sign(payload, secret, { expiresIn: '7d' }, (err, token) => {
             if (err) throw err;
             res.json({ token, user: { id: user.id, name: user.name, email: user.email, role: user.role } });
         });

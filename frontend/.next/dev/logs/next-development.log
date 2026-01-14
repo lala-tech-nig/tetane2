@@ -1,0 +1,28 @@
+[00:00:05.550] Server  LOG     ✓ Ready in 3.9s
+[00:00:19.797] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:24.529] Browser LOG     Registering at: http://localhost:5000/api/auth/register
+[00:04:03.208] Browser ERROR   ./src/app/auth/register/page.js:2:10
+Ecmascript file had an error
+  1 | // 'use client';
+> 2 | import { useState } from 'react';
+    |          ^^^^^^^^
+  3 | import Link from 'next/link';
+  4 | import { useAuth } from '@/context/AuthContext';
+  5 | import styles from '../login/page.module.css'; // Reusing styles
+
+You're importing a component that needs `useState`. This React Hook only works in a Client Component. To fix, mark the file (or its parent) with the `"use client"` directive.
+
+ Learn more: https://nextjs.org/docs/app/api-reference/directives/use-client
+[00:04:13.626] Server  LOG     ✓ Compiled in 231ms
+[00:05:59.403] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:06:04.663] Browser LOG     Registering at: http://localhost:5000/api/auth/register
+[00:08:49.436] Browser LOG     Registering at: http://localhost:5000/api/auth/register
+[00:09:04.357] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:47.728] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:53.374] Browser LOG     Registering at: http://localhost:5000/api/auth/register
+[00:10:00.348] Browser ERROR   Error fetching enrolled courses: {}
+[00:10:00.516] Browser ERROR   Error fetching enrolled courses: {}
+[00:10:44.277] Browser ERROR   Error fetching courses: {}
+[00:10:44.277] Browser ERROR   Error fetching courses: {}
+[00:12:26.794] Server  WARN    ⚠ Fast Refresh had to perform a full reload when ./src/context/AuthContext.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:12:26.812] Server  LOG     ✓ Compiled in 89ms

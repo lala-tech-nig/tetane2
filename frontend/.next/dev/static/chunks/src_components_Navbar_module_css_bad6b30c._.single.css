@@ -1,0 +1,111 @@
+/* [project]/src/components/Navbar.module.css [app-client] (css) */
+.Navbar-module__cJzEcG__navbar {
+  height: var(--header-height);
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  z-index: 100;
+  position: sticky;
+  top: 0;
+}
+
+.Navbar-module__cJzEcG__navContainer {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  display: flex;
+}
+
+.Navbar-module__cJzEcG__logo {
+  color: var(--primary);
+  letter-spacing: -.5px;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.Navbar-module__cJzEcG__desktopMenu {
+  align-items: center;
+  gap: 24px;
+  display: flex;
+}
+
+.Navbar-module__cJzEcG__navLink {
+  color: var(--text-secondary);
+  font-size: .95rem;
+  font-weight: 500;
+}
+
+.Navbar-module__cJzEcG__navLink:hover {
+  color: var(--primary);
+}
+
+.Navbar-module__cJzEcG__userSection {
+  border-left: 1px solid var(--border-light);
+  align-items: center;
+  gap: 16px;
+  padding-left: 16px;
+  display: flex;
+}
+
+.Navbar-module__cJzEcG__userName {
+  color: var(--text-primary);
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.Navbar-module__cJzEcG__authButtons {
+  align-items: center;
+  gap: 16px;
+  display: flex;
+}
+
+.Navbar-module__cJzEcG__mobileToggle {
+  cursor: pointer;
+  background: none;
+  border: none;
+  flex-direction: column;
+  gap: 4px;
+  display: none;
+}
+
+.Navbar-module__cJzEcG__bar {
+  background-color: var(--text-primary);
+  border-radius: 2px;
+  width: 24px;
+  height: 2px;
+}
+
+.Navbar-module__cJzEcG__mobileMenu {
+  top: var(--header-height);
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-light);
+  flex-direction: column;
+  width: 100%;
+  padding: 16px 0;
+  display: flex;
+  position: absolute;
+  left: 0;
+}
+
+.Navbar-module__cJzEcG__mobileLink {
+  color: var(--text-secondary);
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.Navbar-module__cJzEcG__mobileLink:hover {
+  background-color: var(--bg-body);
+  color: var(--primary);
+}
+
+@media (max-width: 768px) {
+  .Navbar-module__cJzEcG__desktopMenu {
+    display: none;
+  }
+
+  .Navbar-module__cJzEcG__mobileToggle {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=src_components_Navbar_module_css_bad6b30c._.single.css.map*/
